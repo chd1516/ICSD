@@ -1,1 +1,1 @@
-# ICSD
+# Intra-modal Consistency for Image-text Retrieval through Soft-label Distillation
