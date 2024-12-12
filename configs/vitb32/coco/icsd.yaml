@@ -6,7 +6,7 @@ save_path: "output/vitb32/coco/icsd"
 # Dataset name. You shouldn't have to change it.
 dataset_name: "cross_coco"
 # Path of the dataset. coco / flickr dataset path.
-data_path: "./data/dataset/coco"
+data_path: ""
 # train batch size.
 batch_size_train: 128
 # *val* batch size.
@@ -27,11 +27,7 @@ is_all_gather: False
 loss_config: {
 
 
-
   contrastive: {
-#
-
-
     is_on: True,
     is_block_tau: False,
     tau: 0.05,

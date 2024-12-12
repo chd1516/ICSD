@@ -6,7 +6,7 @@ save_path: "output/vitb32/flickr/icsd"
 # Dataset name. You shouldn't have to change it.
 dataset_name: "cross_coco"
 # Path of the dataset. coco / flickr dataset path.
-data_path: "./data/dataset/flickr"
+data_path: ""
 # train batch size.
 batch_size_train: 128
 # *val* batch size.

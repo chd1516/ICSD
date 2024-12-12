@@ -16,11 +16,9 @@ class cross_coco_dataset(Dataset):
         self.transform = transform
         self.split = split
         self.max_words = max_words
-        print("==========================================begin load json================================================")
         self.dataPath = os.path.join(self.root, "new_{}.json".format(self.split))
         with open(self.dataPath, "r", encoding="utf8") as f:
             self.dataList = json.load(f)
-        print("==========================================end load json================================================")
 
         self.img_ids = {}
         n = 0
@@ -33,9 +31,7 @@ class cross_coco_dataset(Dataset):
         if self.split == "experiment":
             self.split = "train"
         try:
-            print("=======================================begin load unicom.npy===========================================")
             self.unicom_fea = np.load(os.path.join(self.root, "{}_unicom.npy".format(self.split)), allow_pickle=True).item()
-            print("=========================================end load unicom.npy===========================================")
         except Exception as e:
             traceback.print_exc()
             self.unicom_fea = None
