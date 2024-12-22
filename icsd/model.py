@@ -34,13 +34,8 @@ allgather = AllGather.apply
 
 
 
-class ContraNorm(nn.Module):
-    # @article{guo2023contranorm,
-    #   title={ContraNorm: A Contrastive Learning Perspective on Oversmoothing and Beyond},
-    #   author={Guo, Xiaojun and Wang, Yifei and Du, Tianqi and Wang, Yisen},
-    #   journal={arXiv preprint arXiv:2303.06562},
-    #   year={2023}
-    # }
+class Norm(nn.Module):
+
     def __init__(self, dim, scale=0.1, dual_norm=False, pre_norm=False, temp=1.0, learnable=False, positive=False, identity=False):
         super().__init__()
         if learnable and scale > 0:
@@ -103,8 +98,8 @@ class icsd(nn.Module):
         # projection layer for image, one is for cross-modal retrieval, the other is for uni-modal retrieval
         # for corss-modal retrieval
         if self.is_mode_on("cross_softlabel"):
-            self.ln_cross_image_projection = ContraNorm(dim=self.embed_dim, scale=0.1, dual_norm=True, pre_norm=True, temp=1.0, learnable=True, positive=True, identity=True)
-            self.ln_cross_text_projection = ContraNorm(dim=self.embed_dim, scale=0.1, dual_norm=True, pre_norm=True, temp=1.0, learnable=True, positive=True, identity=True)
+            self.ln_cross_image_projection = Norm(dim=self.embed_dim, scale=0.1, dual_norm=True, pre_norm=True, temp=1.0, learnable=True, positive=True, identity=True)
+            self.ln_cross_text_projection = Norm(dim=self.embed_dim, scale=0.1, dual_norm=True, pre_norm=True, temp=1.0, learnable=True, positive=True, identity=True)
             self.cross_image_projection = nn.Linear(self.embed_dim, self.embed_dim)
             self.cross_text_projection = nn.Linear(self.embed_dim, self.embed_dim)
 
