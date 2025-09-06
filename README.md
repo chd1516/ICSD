@@ -28,7 +28,7 @@ Image Text Retrieval training/evaluation
 
 You should see albef (https://github.com/salesforce/ALBEF) to build a dataset.
 
-For more data examples, see the folder `dataset_example`.
+For more data examples, 
 
 Here is the data format:
 `train.json`
@@ -66,3 +66,4 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 torchrun --nproc_per_node=4 --master-port 15160 ret
 
 ## Checkpoint
 We release our trained checkpoints, download them from the [link](https://pan.baidu.com/s/1Hfk2YpJ3_nz-c_vdQ3eZPA?pwd=u4mv).
+
