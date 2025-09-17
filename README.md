@@ -19,6 +19,21 @@ evaluation.py <= evaluation
 retrieval.py  <= retrieval
 
 ```
+## Environment Installation
+
+
+<details>
+<summary>For training and limited evaluation</summary>
+
+```bash
+# python >= 3.9
+pip install torch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 --index-url https://download.pytorch.org/whl/cu118
+pip install transformers sentence-transformers tqdm scikit-learn ftfy
+```
+
+</details>
+
+
 ## Data Preprocessing
 
 <details>
@@ -66,4 +81,5 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 torchrun --nproc_per_node=4 --master-port 15160 ret
 
 ## Checkpoint
 We release our trained checkpoints, download them from the [link](https://pan.baidu.com/s/1Hfk2YpJ3_nz-c_vdQ3eZPA?pwd=u4mv).
+
 
